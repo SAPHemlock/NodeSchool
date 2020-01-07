@@ -13,8 +13,9 @@ require("babel/register")({
   ignore: false
 });
 
-app.use("/indexn*", function(req, res) {
-  res.render("indexn", "");
+app.use('/index*', function(req, res) {
+    console.log(req.baseUrl);
+    res.render(req.baseUrl.replace('/',''), "");
 });
 
 // http://localhost:3000/index/2
