@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// Let's pass data from the server into a component!
-// We're going to remove the data from our JSX, and pass it from the server instead.
-// This will require changing code on the server (program.js).
+// Let's set properties using variables.
 
 export default class TodoBox extends React.Component {
-    render() {
+  render() {
     return (
       <div className="todoBox">
         <h1>Todos</h1>
-        <TodoList data = {this.props.data} />
+        <TodoList />
         <TodoForm />
       </div>
     );
@@ -18,13 +16,14 @@ export default class TodoBox extends React.Component {
 }
 
 class TodoList extends React.Component {
-    render() {
-    var todo = this.props.data.map(function(obj) { return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>});
+  render() {
     return (
-      <div className = "todoList">
-        <table style={{border: "2px solid black;"}}>
+      <div className="todoList">
+        <table style={{ border: "2px solid black;" }}>
           <tbody>
-            {todo}
+            <Todo title="Shopping">Milk</Todo>
+            <Todo title="Hair cut">13:00</Todo>
+            <Todo title="Learn React">15:00</Todo>
           </tbody>
         </table>
       </div>
