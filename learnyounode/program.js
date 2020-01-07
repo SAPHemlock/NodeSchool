@@ -13,16 +13,14 @@ require("babel/register")({
   ignore: false
 });
 
-app.use("/", function(req, res) {
-  res.render("index", "");
+app.use("/indexn*", function(req, res) {
+  res.render("indexn", "");
 });
 
-var indexEndpoints = ['/index2', '/index3'];
-indexEndpoints.forEach(function(name) {
-  app.get(name, function(req, res) {
-    res.render(name);
-  });
-});
+// http://localhost:3000/index/2
+// app.get('/index/:id', function(req , res){
+//     res.render('index' + req.params.id, "");
+// });
 
 app.listen(app.get("port"), function() {
   console.log("Express server is up on port 3000");
