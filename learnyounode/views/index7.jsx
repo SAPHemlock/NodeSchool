@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// From this excercise on, we'll use React not only on the server side but also on the front-end.
-// In fact, we'll use the very same view files for rendering both the server-side initial response, and on the front-end for any DOM manipulation necessary. Sharing the code between the front end and the server is a concept known as Isomorphic JavaScript.
+// Let's pass data from the server into a component!
+// We're going to remove the data from our JSX, and pass it from the server instead.
+// This will require changing code on the server (program.js).
 
 export default class TodoBox extends React.Component {
     render() {
