@@ -21,7 +21,7 @@ class TodoList extends React.Component {
     var todo = this.props.data.map(function(obj) { return <Todo title={obj.title} key={obj.title}>{obj.detail}</Todo>});
     return (
       <div className = "todoList">
-        <table style={{border: "2px solid black;"}}>
+        <table style={{border: "2px solid black"}}>
           <tbody>
             {todo}
           </tbody>
@@ -70,6 +70,6 @@ class TodoForm extends React.Component {
 
 let style = {
     tableContent: {
-        border: "1px solid black;"
+        border: "1px solid black"
     }
 };
