@@ -69,13 +69,7 @@ class TodoForm extends React.Component {
 }
 
 let style = {
-  checkedTodo: {
-      textDecoration: "line-through"
-  },
-  notCheckedTodo: {
-      textDecoration: "none"
-  },
-  tableContent: {
-      border: "1px solid black"
-  }
+    tableContent: {
+        border: "1px solid black"
+    }
 };
