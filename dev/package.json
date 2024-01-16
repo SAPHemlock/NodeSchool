@@ -1,0 +1,20 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "callBC14odataservice.js",
+  "scripts": {
+    "test": "node"
+  },
+  "keywords": [
+    "test",
+    "node",
+    "code"
+  ],
+  "author": "Sandip",
+  "license": "ISC",
+  "dependencies": {
+    "httpntlm": "^1.8.13",
+    "request": "^2.88.2"
+  }
+}
