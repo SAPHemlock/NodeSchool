@@ -12,7 +12,9 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\dev\\callBC14odataservice.js"
+            //"program": "${workspaceFolder}\\dev\\callBC14odataservice.js"
+            "program": "${workspaceFolder}\\dev\\pwshipmentsreq.js"
+
         }
     ]
 }
