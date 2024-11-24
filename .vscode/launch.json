@@ -1,20 +1,25 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            //"program": "${workspaceFolder}\\dev\\callBC14odataservice.js"
-            "program": "${workspaceFolder}\\dev\\pwshipmentsreq.js"
-
-        }
-    ]
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch TS Program",
+      "program": "${workspaceFolder}/fast-xml/veracore-order.ts",
+      "request": "launch",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/fast-xml/out/**/*.js"],
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      //"program": "${workspaceFolder}\\dev\\callBC14odataservice.js"
+      "program": "${workspaceFolder}\\dev\\pwshipmentsreq.js"
+    }
+  ]
 }

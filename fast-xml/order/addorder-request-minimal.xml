@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <soap12:Header>
+    <AuthenticationHeader xmlns="http://sma-promail/">
+      <Username>string</Username>
+      <Password>string</Password>
+    </AuthenticationHeader>
+    <DebugHeader xmlns="http://sma-promail/">
+      <Debug>boolean</Debug>
+      <Request>string</Request>
+    </DebugHeader>
+  </soap12:Header>
+  <soap12:Body>
+    <AddOrder xmlns="http://sma-promail/">
+      <order>
+        <Header>
+          <ID>string</ID>
+          <EntryDate>dateTime</EntryDate>
+          <OrderEntryView>
+            <SeqID>int</SeqID>
+            <Description>string</Description>
+          </OrderEntryView>
+          <ReferenceNumber>string</ReferenceNumber>
+          <PONumber>string</PONumber>
+          <Comments>string</Comments>
+          <ApprovalComment>string</ApprovalComment>
+        </Header>
+        <Classification>
+          <CampaignID>string</CampaignID>
+          <ResponseMedia>
+            <Description>string</Description>
+          </ResponseMedia>
+          <CustomerProject>
+            <ID>string</ID>
+          </CustomerProject>
+          <Store>string</Store>
+          <Department>string</Department>
+          <DistributionCenter>string</DistributionCenter>
+          <Vendor>string</Vendor>
+        </Classification>
+        <Shipping>
+          <FreightCarrier>
+            <Name>string</Name>
+          </FreightCarrier>
+          <FreightService>
+            <Description>string</Description>
+          </FreightService>
+          <FreightAccount>
+            <SeqID>int</SeqID>
+            <Description>string</Description>
+            <FreightCarrier xsi:nil="true" />
+            <Person xsi:nil="true" />
+            <ThirdAcctNo>string</ThirdAcctNo>
+            <NonResident>boolean</NonResident>
+          </FreightAccount>
+          <ShippingOption>
+            <Description>string</Description>
+          </ShippingOption>
+          <FreightCode>string</FreightCode>
+          <FreightCodeDescription>string</FreightCodeDescription>
+          <ShipComments>string</ShipComments>
+          <NeededBy>string</NeededBy>
+          <Rush>boolean</Rush>
+          <ReleaseDate>dateTime</ReleaseDate>
+          <ThirdPartyType>int</ThirdPartyType>
+          <ThirdAccountNumber>string</ThirdAccountNumber>
+          <NCShip>boolean</NCShip>
+          <NCPack>boolean</NCPack>
+          <NCOffers>boolean</NCOffers>
+          <NCHandling>boolean</NCHandling>
+          <NCOffShipHandling>boolean</NCOffShipHandling>
+          <NCSpecialHandling>boolean</NCSpecialHandling>
+          <NCRush>boolean</NCRush>
+        </Shipping>
+        <Money>
+          <PriceClass>
+            <SeqID>int</SeqID>
+            <Description>string</Description>
+          </PriceClass>
+          <SpecialHandlingCharge>decimal</SpecialHandlingCharge>
+          <TaxPercent>decimal</TaxPercent>
+          <NoChargeAmount>decimal</NoChargeAmount>
+          <TaxAmount>decimal</TaxAmount>
+        </Money>
+        <OrderVariables>
+          <OrderVariable>
+            <SeqID>int</SeqID>
+            <VariableField xsi:nil="true" />
+            <Value>string</Value>
+            <ValueDescription>string</ValueDescription>
+          </OrderVariable>
+          <OrderVariable>
+            <SeqID>int</SeqID>
+            <VariableField xsi:nil="true" />
+            <Value>string</Value>
+            <ValueDescription>string</ValueDescription>
+          </OrderVariable>
+        </OrderVariables>
+        <OrderedBy>
+          <!-- This node contains few other properties also which are not mentioned in docs but are used in uStoreVeraCoreOrdersender project -->
+          <ORDOBY>
+            <SeqID>int</SeqID>
+            <CustomerID>string</CustomerID>
+          </ORDOBY>
+          <FullName>string</FullName>
+          <FullNameWithSuffix>string</FullNameWithSuffix>
+          <CityStateZip>string</CityStateZip>
+          <CityStateZipCountry>string</CityStateZipCountry>
+          <CompoundAddress>string</CompoundAddress>
+        </OrderedBy>
+        <ShipTo>
+          <OrderShipTo>
+            <!-- Few nodes are missing like Address1,2 City, State, PostalCode, Country, Phone, Fax, UID, CompanyName -->
+            <Flag>Other or OrderedBy</Flag>
+            <Key>string</Key>
+            <ReleaseDate>dateTime</ReleaseDate>
+            <Rush>boolean</Rush>
+            <RushHandling>decimal</RushHandling>
+            <Comments>string</Comments>
+            <!-- Need to have a Description as child element inside SpecialHandling node -->
+            <SpecialHandling xsi:nil="true" />
+            <FullName>string</FullName>
+            <CityStateZip>string</CityStateZip>
+            <CityStateZipCountry>string</CityStateZipCountry>
+            <CompoundAddress>string</CompoundAddress>
+          </OrderShipTo>
+        </ShipTo>
+        <BillTo>
+          <!-- Few fields are missing like Email, Phone, CompanyName, Address1, Address2, City, State, PostalCode, Country, UID -->
+          <Flag>Other or OrderedBy or DoNotUse or ShipTo</Flag>
+          <FullName>string</FullName>
+          <FullNameWithSuffix>string</FullNameWithSuffix>
+          <CityStateZip>string</CityStateZip>
+          <CityStateZipCountry>string</CityStateZipCountry>
+          <CompoundAddress>string</CompoundAddress>
+        </BillTo>
+        <Offers>
+          <OfferOrdered>
+            <Offer xsi:nil="true" />
+            <Quantity>int</Quantity>
+            <OrderShipTo xsi:nil="true" />
+            <OrderShipToKey xsi:nil="true" />
+            <PriceType>unsignedByte</PriceType>
+            <UnitPrice>decimal</UnitPrice>
+            <ShipType>short</ShipType>
+            <ShippingHandling>decimal</ShippingHandling>
+            <Discounts>decimal</Discounts>
+            <DocumentID>string</DocumentID>
+            <ShipToKey>string</ShipToKey>
+            <Comments>string</Comments>
+            <RCOrderKey>string</RCOrderKey>
+            <LineNumber>long</LineNumber>
+            <ProofLink>string</ProofLink>
+            <Variables xsi:nil="true" />
+            <ProductDetails xsi:nil="true" />
+            <LineTaxPercent>decimal</LineTaxPercent>
+            <LineTaxAmount>decimal</LineTaxAmount>
+          </OfferOrdered>
+        </Offers>
+      </order>
+    </AddOrder>
+  </soap12:Body>
+</soap12:Envelope>

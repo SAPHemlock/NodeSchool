@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <soap12:Header>
+    <DebugHeader xmlns="http://sma-promail/">
+      <Debug>boolean</Debug>
+      <Request>string</Request>
+    </DebugHeader>
+  </soap12:Header>
+  <soap12:Body>
+    <GetShippingActivityResponse xmlns="http://sma-promail/">
+      <GetShippingActivityResult>
+        <ShippingActivity>
+          <ShipDate>string</ShipDate>
+          <OrderId>string</OrderId>
+          <PickPackId>string</PickPackId>
+          <Type>string</Type>
+          <LinesShipped>int</LinesShipped>
+          <PiecesShipped>int</PiecesShipped>
+          <NumberofPackages>int</NumberofPackages>
+          <TotalWeight>double</TotalWeight>
+          <PublishedFreight>decimal</PublishedFreight>
+          <ActualFreight>decimal</ActualFreight>
+          <MarkedUpFreight>decimal</MarkedUpFreight>
+          <ShippingOrderType>string</ShippingOrderType>
+        </ShippingActivity>
+        <ShippingActivity>
+          <ShipDate>string</ShipDate>
+          <OrderId>string</OrderId>
+          <PickPackId>string</PickPackId>
+          <Type>string</Type>
+          <LinesShipped>int</LinesShipped>
+          <PiecesShipped>int</PiecesShipped>
+          <NumberofPackages>int</NumberofPackages>
+          <TotalWeight>double</TotalWeight>
+          <PublishedFreight>decimal</PublishedFreight>
+          <ActualFreight>decimal</ActualFreight>
+          <MarkedUpFreight>decimal</MarkedUpFreight>
+          <ShippingOrderType>string</ShippingOrderType>
+        </ShippingActivity>
+      </GetShippingActivityResult>
+    </GetShippingActivityResponse>
+  </soap12:Body>
+</soap12:Envelope>
