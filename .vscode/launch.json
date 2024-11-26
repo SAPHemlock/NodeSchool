@@ -5,21 +5,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch TS Program",
-      "program": "${workspaceFolder}/fast-xml/veracore-order.ts",
-      "request": "launch",
-      "preLaunchTask": "tsc: build - tsconfig.json",
-      "outFiles": ["${workspaceFolder}/fast-xml/out/**/*.js"],
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
-    },
-    {
       "type": "node",
       "request": "launch",
+      "preLaunchTask": "tsc: build - tsconfig.json",
       "name": "Launch Program",
+      "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"],
-      //"program": "${workspaceFolder}\\dev\\callBC14odataservice.js"
-      "program": "${workspaceFolder}\\dev\\pwshipmentsreq.js"
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/tsx",
+      "program": "${workspaceFolder}/index.ts"
     }
   ]
 }
