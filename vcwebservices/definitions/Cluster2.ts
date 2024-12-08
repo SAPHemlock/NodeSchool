@@ -1,6 +1,6 @@
 import { Cluster } from "./Cluster";
 import { Offer } from "./Offer";
-import { ProductIDs } from "./ProductIDs";
+import { ProductIDs } from "./ProductIds";
 import { Activation } from "./Activation";
 
 /**
@@ -9,12 +9,12 @@ import { Activation } from "./Activation";
  * @targetNamespace `http://sma-promail/`
  */
 export interface Cluster2 {
-    /** Cluster */
-    Cluster?: Cluster;
-    /** Offer */
-    Offer?: Offer;
-    /** ProductIDs */
-    ProductIDs?: ProductIDs;
-    /** Activation */
-    Activation?: Activation;
+  /** Cluster */
+  Cluster?: Cluster;
+  /** Offer */
+  Offer?: Offer;
+  /** ProductIDs */
+  ProductIDs?: ProductIDs;
+  /** Activation */
+  Activation?: Activation;
 }

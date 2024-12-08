@@ -11,13 +11,20 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/csv-parse": "^1.1.12",
     "@types/node": "^22.9.3",
+    "@types/request": "^2.48.12",
+    "@types/xml2js": "^0.4.14",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@types/pino": "^7.0.4",
+    "csv-parse": "^5.6.0",
     "fast-xml-parser": "^4.5.0",
-    "wsdl-tsclient": "^1.7.1"
+    "request": "^2.88.2",
+    "wsdl-tsclient": "^1.7.1",
+    "xml2js": "^0.6.2"
   }
 }

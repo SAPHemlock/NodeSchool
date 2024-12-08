@@ -1,4 +1,3 @@
-const xsdFilePath = "VCWebServices.wsdl";
-const outputFilePath = "veracore_services.ts";
+import { readCSVAndProcessOrders } from "./analyze-shipped-orders";
 
-// npx wsdl-tsclient ./VCWebServices.wsdl -o ./generatedTypes
+readCSVAndProcessOrders();
