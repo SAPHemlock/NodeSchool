@@ -1,7 +1,12 @@
 import * as fs from "fs";
 import { parse } from "csv-parse";
 import * as xml2js from "xml2js";
-import { CustomerInfo, customers } from "./types";
+import { CustomerInfo } from "./types";
+import pino from "pino";
+import config from "dotenv";
+
+// Create a Pino logger instance
+const logger = pino(pino.destination("./app.log"));
 
 // Function to read the CSV file
 async function readCSV(fileName: string): Promise<number[]> {
@@ -57,8 +62,7 @@ async function processOrder(oms: CustomerInfo, orderId: number): Promise<void> {
     const text = await response.text();
 
     if (!response.ok) {
-      console.log(`Response for orderId ${orderId}:`);
-      console.log(text);
+      logger.error(`Response for orderId ${orderId}: ${text}`);
     } else {
       // Parse the response and count PickPackType nodes
       const result = await xml2js.parseStringPromise(text, {
@@ -71,21 +75,35 @@ async function processOrder(oms: CustomerInfo, orderId: number): Promise<void> {
       const count = Array.isArray(pickPackTypes) ? pickPackTypes.length : 1;
 
       if (count > 1) {
-        console.log(
-          `Number of PickPackType nodes for orderId ${orderId}: ${count}`
+        logger.info(
+          `${oms.customerName}|Number of PickPackType nodes for orderId ${orderId}: ${count}`
         );
       }
     }
   } catch (error) {
-    console.error(`Error processing orderId ${orderId}:`, error);
+    logger.error(`Error processing orderId ${orderId}: ${error}`);
   }
 }
 
 // Main function to read CSV and process orders
 export async function readCSVAndProcessOrders() {
   try {
+    config.config();
+
+    const jsonArray = process.env.CUSTOMERS
+      ? JSON.parse(process.env.CUSTOMERS)
+      : [];
+    console.log(jsonArray);
+
+    if (jsonArray.length == 0) {
+      logger.error("No customers found in the environment variable.");
+      return;
+    }
+
+    const customers: CustomerInfo[] = jsonArray;
+
     for (const customer of customers) {
-      console.log(`Processing orders for ${customer.customerName}`);
+      logger.info(`Processing orders for ${customer.customerName}`);
       const orders = await readCSV(
         `./analyze-shipped-orders/${customer.csvFileName}`
       );
@@ -94,6 +112,6 @@ export async function readCSVAndProcessOrders() {
       }
     }
   } catch (error) {
-    console.error("Error:", error);
+    logger.error("Error:", error);
   }
 }

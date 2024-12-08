@@ -4,7 +4,11 @@
   "type": "commonjs",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx index.ts",
+    "build": "tsx index.ts",
+    "dev": "tsx index.ts",
+    "watch": "tsx index.ts"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +26,7 @@
   "dependencies": {
     "@types/pino": "^7.0.4",
     "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
     "fast-xml-parser": "^4.5.0",
     "request": "^2.88.2",
     "wsdl-tsclient": "^1.7.1",
